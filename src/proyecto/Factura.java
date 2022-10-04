@@ -14,7 +14,8 @@ public class Factura extends javax.swing.JFrame {
     private static JTable receptor = null;
     double porcentaje = 0, total = 0,precio = 0;
     int cantidad = 0;
-    public static String usuario = "1";
+    static int idV=10, idD=1;
+    public static String usuario;
     DefaultTableModel modelo = new DefaultTableModel();
     ArrayList<ClaseDetalle> listaVentas = new ArrayList<>();
 
@@ -316,15 +317,16 @@ public class Factura extends javax.swing.JFrame {
         //setDatosVideojuego();
         //Nuevo detalle de Venta
         ClaseDetalle nDetalle = new ClaseDetalle();
+        nDetalle.setIdDetalle(String.valueOf(idD));
+        nDetalle.setVenta(String.valueOf(idV));
         nDetalle.setIdJuego(setDatosVideojuego((String) cboProducto.getSelectedItem()).getId());
         nDetalle.setNombreJuego((String) cboProducto.getSelectedItem());
         nDetalle.setCantidad((int) spnCantidad.getValue());
         nDetalle.setSubtotal(nDetalle.getCantidad() * ((int) Double.parseDouble(lblPrecio.getText())));
-
         if (!buscarVenta(nDetalle)) {
             listaVentas.add(nDetalle);
         }
-
+        idD++;
         actualizarTabla();
         borrarVenta();
     }//GEN-LAST:event_btnAgregarActionPerformed
@@ -376,13 +378,11 @@ public class Factura extends javax.swing.JFrame {
     public void realizarCompra() {
         LocalDate fecha = LocalDate.now();
         String fec = String.valueOf(fecha);
-        int idV = 10, idD=0;
         try {
             String sInsertVenta = "INSERT INTO ventas (idVenta,idCliente,Fecha,Descuento,Total) VALUES(?,?,?,?,?)";
             String sInsertDetalle = "INSERT INTO detalle_ventas (ID,Venta,Juego,Cantidad,Subtotal) VALUES(?,?,?,?,?)";
 
             PreparedStatement pst = (PreparedStatement) cn.prepareStatement(sInsertVenta);
-            idV++;
             pst.setString(1, String.valueOf(idV));
             pst.setString(2, usuario);//asignar usuario con el login
             pst.setString(3, fec);
@@ -391,19 +391,15 @@ public class Factura extends javax.swing.JFrame {
             pst.execute();
 
             for (ClaseDetalle v : listaVentas) {
-                idD = 1;
-                idD++;
-                System.out.println("Id: "+idD);
-                /*PreparedStatement pstD = (PreparedStatement) cn.prepareStatement(sInsertDetalle);
-                pstD.setString(1, String.valueOf(idV)+String.valueOf(idD));
-                pstD.setString(2, String.valueOf(idV));
+                PreparedStatement pstD = (PreparedStatement) cn.prepareStatement(sInsertDetalle);
+                pstD.setString(1, v.getIdDetalle());
+                pstD.setString(2, v.getVenta());
                 pstD.setString(3, v.getIdJuego());
                 pstD.setString(4, String.valueOf(porcentaje));
                 pstD.setString(5, String.valueOf(total));
-                pstD.execute();*/
-                
+                pstD.execute();
             }
-
+            idV++;
             JOptionPane.showMessageDialog(null, "Compra realizada con Exito");
 
         } catch (Exception e) {

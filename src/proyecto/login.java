@@ -183,11 +183,12 @@ public class login extends javax.swing.JFrame {
                 String usu = lblCorreo.getText();
                 String contra = result.getString("Contra");
                 String con = pfContra.getText();
+                String idUsuario = result.getString("idCliente");
                 if (usu.equals(usuario) && con.equals(contra)) {
                     Factura ver = new Factura();
                     ver.setVisible(true);
+                    ver.usuario = idUsuario;
                     dispose();
-
                 }
 
             }

@@ -54,7 +54,6 @@
                           <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="lblCorreo" max="32767" attributes="0"/>
                       <Component id="pfContra" min="-2" pref="253" max="-2" attributes="0"/>
