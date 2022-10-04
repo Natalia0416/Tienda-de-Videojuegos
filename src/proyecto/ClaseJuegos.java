@@ -1,6 +1,6 @@
 package proyecto;
 
-public class venta {
+public class ClaseJuegos {
 
     String id;
     String nombre;
@@ -19,7 +19,7 @@ public class venta {
         this.subtotal = subtotal;
     }
 
-    public venta() {
+    public ClaseJuegos() {
     }
 
     public String getId() {
