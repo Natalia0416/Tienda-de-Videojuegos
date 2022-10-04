@@ -11,7 +11,7 @@ public class Conexion {
 
     public Connection conexion() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
             conectar = DriverManager.getConnection("jdbc:mysql://localhost/bd_tallervideojuegos", "root", "");
         } catch (Exception e) {
             System.out.println(e.getMessage());
