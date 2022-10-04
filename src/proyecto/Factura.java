@@ -1,12 +1,9 @@
 package proyecto;
 
-import java.awt.Color;
-import java.awt.Image;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.sql.*;
 import java.util.ArrayList;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class Factura extends javax.swing.JFrame {
