@@ -1,6 +1,8 @@
 package proyecto;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.sql.*;
 import javax.swing.JOptionPane;
@@ -14,6 +16,8 @@ public class registro extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Registro");
         this.setLocationRelativeTo(null);
+        Image icono=Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/logo.png"));
+        this.setIconImage(icono);
         jPanel1.setBackground(new Color(91, 173, 178));
         
     }

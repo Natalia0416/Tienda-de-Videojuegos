@@ -1,25 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package proyecto;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
 
-/**
- *
- * @author lauri
- */
+
 public class inicio_adm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form inicio_adm
-     */
+   
     public inicio_adm() {
         initComponents();
         this.setTitle("Inicio");
         this.setLocationRelativeTo(null);
+        Image icono=Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/logo.png"));
+        this.setIconImage(icono);
         jPanel1.setBackground(new Color(91, 173, 178));
     }
 

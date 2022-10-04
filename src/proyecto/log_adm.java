@@ -1,6 +1,8 @@
 package proyecto;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.Toolkit;
 
 public class log_adm extends javax.swing.JFrame {
 
@@ -8,6 +10,8 @@ public class log_adm extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Administrador");
         this.setLocationRelativeTo(null);
+        Image icono=Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/logo.png"));
+        this.setIconImage(icono);
         jPanel1.setBackground(new Color(91, 173, 178));
         
     }

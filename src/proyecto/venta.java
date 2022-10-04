@@ -1,55 +1,81 @@
-
 package proyecto;
 
-
 public class venta {
-    int id;
-    String descripcion;
-    double cantidad;
-    double precio;
-    double importe;
+
+    String id;
+    String nombre;
+    int cantidad;
+    int precio;
+    int subtotal;
+    String capacidad;
+    String categoria;
+    String modelos;
+
+    public int getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(int subtotal) {
+        this.subtotal = subtotal;
+    }
 
     public venta() {
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public double getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(double cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
-    public double getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(double precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
 
-    public double getImporte() {
-        return importe;
+    public String getCapacidad() {
+        return capacidad;
     }
 
-    public void setImporte(double importe) {
-        this.importe = importe;
+    public void setCapacidad(String capacidad) {
+        this.capacidad = capacidad;
     }
-    
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getModelos() {
+        return modelos;
+    }
+
+    public void setModelos(String modelos) {
+        this.modelos = modelos;
+    }
+
 }
