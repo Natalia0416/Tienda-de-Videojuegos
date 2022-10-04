@@ -25,7 +25,7 @@ public class Factura extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         Image icono = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/imagenes/logo.png"));
         this.setIconImage(icono);
-        jPanel1.setBackground(new Color(91, 173, 178));
+        jPanel1.setBackground(new Color(182, 182, 189));
 //        DefaultComboBoxModel comboModel = new DefaultComboBoxModel(productos);
 //        cboProducto.setModel(comboModel);
         modelo.addColumn("Nombre");
